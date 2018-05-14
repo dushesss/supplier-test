@@ -1,0 +1,13 @@
+C:\Users\dushesss\Desktop\Visual Studio 2017\Supplier\Supplier\bin\Debug\Supplier.exe.config
+C:\Users\dushesss\Desktop\Visual Studio 2017\Supplier\Supplier\bin\Debug\Supplier.exe
+C:\Users\dushesss\Desktop\Visual Studio 2017\Supplier\Supplier\bin\Debug\Supplier.pdb
+C:\Users\dushesss\Desktop\Visual Studio 2017\Supplier\Supplier\obj\Debug\Supplier.csprojResolveAssemblyReference.cache
+C:\Users\dushesss\Desktop\Visual Studio 2017\Supplier\Supplier\obj\Debug\Supplier.Entry.resources
+C:\Users\dushesss\Desktop\Visual Studio 2017\Supplier\Supplier\obj\Debug\Supplier.Main.resources
+C:\Users\dushesss\Desktop\Visual Studio 2017\Supplier\Supplier\obj\Debug\Supplier.Properties.Resources.resources
+C:\Users\dushesss\Desktop\Visual Studio 2017\Supplier\Supplier\obj\Debug\Supplier.csproj.GenerateResource.Cache
+C:\Users\dushesss\Desktop\Visual Studio 2017\Supplier\Supplier\obj\Debug\Supplier.exe
+C:\Users\dushesss\Desktop\Visual Studio 2017\Supplier\Supplier\obj\Debug\Supplier.pdb
+C:\Users\dushesss\Desktop\Visual Studio 2017\Supplier\Supplier\obj\Debug\Supplier.NewSup.resources
+C:\Users\dushesss\Desktop\Visual Studio 2017\Supplier\Supplier\obj\Debug\Supplier.Zayavka.resources
+C:\Users\dushesss\Desktop\Visual Studio 2017\Supplier\Supplier\obj\Debug\Supplier.Info.resources
