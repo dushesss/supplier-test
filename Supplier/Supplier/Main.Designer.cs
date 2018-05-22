@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvSupl = new System.Windows.Forms.DataGridView();
-            this.btnAddNSup = new System.Windows.Forms.Button();
-            this.btnAddApp = new System.Windows.Forms.Button();
-            this.chlbxCeh = new System.Windows.Forms.CheckedListBox();
-            this.txtbxSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtbxSearch = new System.Windows.Forms.TextBox();
+            this.chlbxCeh = new System.Windows.Forms.CheckedListBox();
+            this.btnAddApp = new System.Windows.Forms.Button();
+            this.btnAddNSup = new System.Windows.Forms.Button();
+            this.dgvSupl = new System.Windows.Forms.DataGridView();
             this.firm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stuff = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +48,88 @@
             this.ceh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupl)).BeginInit();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(432, 115);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(78, 38);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Загрузить базу данных";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(350, 115);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 38);
+            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.Text = "Обновить таблицу";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(262, 115);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(81, 38);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.Text = "Сохранить базу данных";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(180, 115);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(76, 38);
+            this.btnClose.TabIndex = 16;
+            this.btnClose.Text = "Выйти";
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(180, 9);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(76, 20);
+            this.btnSearch.TabIndex = 15;
+            this.btnSearch.Text = "Поиск";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtbxSearch
+            // 
+            this.txtbxSearch.Location = new System.Drawing.Point(12, 9);
+            this.txtbxSearch.Name = "txtbxSearch";
+            this.txtbxSearch.Size = new System.Drawing.Size(161, 20);
+            this.txtbxSearch.TabIndex = 14;
+            // 
+            // chlbxCeh
+            // 
+            this.chlbxCeh.FormattingEnabled = true;
+            this.chlbxCeh.Items.AddRange(new object[] {
+            "Цех 1",
+            "Цех 2",
+            "Цех 3"});
+            this.chlbxCeh.Location = new System.Drawing.Point(12, 35);
+            this.chlbxCeh.Name = "chlbxCeh";
+            this.chlbxCeh.Size = new System.Drawing.Size(244, 79);
+            this.chlbxCeh.TabIndex = 13;
+            // 
+            // btnAddApp
+            // 
+            this.btnAddApp.Location = new System.Drawing.Point(95, 115);
+            this.btnAddApp.Name = "btnAddApp";
+            this.btnAddApp.Size = new System.Drawing.Size(81, 38);
+            this.btnAddApp.TabIndex = 12;
+            this.btnAddApp.Text = "Новый заказ";
+            this.btnAddApp.UseVisualStyleBackColor = true;
+            // 
+            // btnAddNSup
+            // 
+            this.btnAddNSup.Location = new System.Drawing.Point(12, 115);
+            this.btnAddNSup.Name = "btnAddNSup";
+            this.btnAddNSup.Size = new System.Drawing.Size(81, 38);
+            this.btnAddNSup.TabIndex = 11;
+            this.btnAddNSup.Text = "Добавить поставщика";
+            this.btnAddNSup.UseVisualStyleBackColor = true;
             // 
             // dgvSupl
             // 
@@ -63,92 +146,11 @@
             this.upDate,
             this.how_much,
             this.ceh});
-            this.dgvSupl.Location = new System.Drawing.Point(12, 165);
+            this.dgvSupl.Location = new System.Drawing.Point(12, 159);
             this.dgvSupl.Name = "dgvSupl";
             this.dgvSupl.ShowEditingIcon = false;
             this.dgvSupl.Size = new System.Drawing.Size(768, 273);
-            this.dgvSupl.TabIndex = 0;
-            this.dgvSupl.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSupl_CellDoubleClick);
-            // 
-            // btnAddNSup
-            // 
-            this.btnAddNSup.Location = new System.Drawing.Point(12, 121);
-            this.btnAddNSup.Name = "btnAddNSup";
-            this.btnAddNSup.Size = new System.Drawing.Size(81, 38);
-            this.btnAddNSup.TabIndex = 1;
-            this.btnAddNSup.Text = "Добавить поставщика";
-            this.btnAddNSup.UseVisualStyleBackColor = true;
-            this.btnAddNSup.Click += new System.EventHandler(this.btnAddNSup_Click);
-            // 
-            // btnAddApp
-            // 
-            this.btnAddApp.Location = new System.Drawing.Point(95, 121);
-            this.btnAddApp.Name = "btnAddApp";
-            this.btnAddApp.Size = new System.Drawing.Size(81, 38);
-            this.btnAddApp.TabIndex = 2;
-            this.btnAddApp.Text = "Новый заказ";
-            this.btnAddApp.UseVisualStyleBackColor = true;
-            this.btnAddApp.Click += new System.EventHandler(this.btnAddApp_Click);
-            // 
-            // chlbxCeh
-            // 
-            this.chlbxCeh.FormattingEnabled = true;
-            this.chlbxCeh.Items.AddRange(new object[] {
-            "Цех 1",
-            "Цех 2",
-            "Цех 3"});
-            this.chlbxCeh.Location = new System.Drawing.Point(12, 41);
-            this.chlbxCeh.Name = "chlbxCeh";
-            this.chlbxCeh.Size = new System.Drawing.Size(244, 79);
-            this.chlbxCeh.TabIndex = 3;
-            // 
-            // txtbxSearch
-            // 
-            this.txtbxSearch.Location = new System.Drawing.Point(12, 15);
-            this.txtbxSearch.Name = "txtbxSearch";
-            this.txtbxSearch.Size = new System.Drawing.Size(161, 20);
-            this.txtbxSearch.TabIndex = 4;
-            this.txtbxSearch.Text = " ";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(180, 15);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(76, 20);
-            this.btnSearch.TabIndex = 5;
-            this.btnSearch.Text = "Поиск";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(180, 121);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(76, 38);
-            this.btnClose.TabIndex = 6;
-            this.btnClose.Text = "Выйти";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(262, 121);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(81, 38);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Сохранить";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(350, 121);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 38);
-            this.btnUpdate.TabIndex = 8;
-            this.btnUpdate.Text = "Обновить таблицу";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.dgvSupl.TabIndex = 10;
             // 
             // firm
             // 
@@ -203,7 +205,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 450);
+            this.ClientSize = new System.Drawing.Size(789, 443);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);
@@ -214,8 +217,7 @@
             this.Controls.Add(this.btnAddNSup);
             this.Controls.Add(this.dgvSupl);
             this.Name = "Main";
-            this.Text = "Колхозный снабженец";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
+            this.Text = "Главная";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -224,15 +226,16 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvSupl;
-        private System.Windows.Forms.Button btnAddNSup;
-        private System.Windows.Forms.Button btnAddApp;
-        private System.Windows.Forms.CheckedListBox chlbxCeh;
-        private System.Windows.Forms.TextBox txtbxSearch;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtbxSearch;
+        private System.Windows.Forms.CheckedListBox chlbxCeh;
+        private System.Windows.Forms.Button btnAddApp;
+        private System.Windows.Forms.Button btnAddNSup;
+        private System.Windows.Forms.DataGridView dgvSupl;
         private System.Windows.Forms.DataGridViewTextBoxColumn firm;
         private System.Windows.Forms.DataGridViewTextBoxColumn stuff;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;

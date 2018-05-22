@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Supplier
 {
-    public partial class Main : Form
+    public partial class NewOrder : Form
     {
-        public Main()
+        public NewOrder()
         {
             InitializeComponent();
         }
