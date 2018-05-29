@@ -38,14 +38,6 @@
             this.btnAddApp = new System.Windows.Forms.Button();
             this.btnAddNSup = new System.Windows.Forms.Button();
             this.dgvSupl = new System.Windows.Forms.DataGridView();
-            this.firm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stuff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfZakaz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.upDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.how_much = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ceh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,6 +113,7 @@
             this.btnAddApp.TabIndex = 12;
             this.btnAddApp.Text = "Новый заказ";
             this.btnAddApp.UseVisualStyleBackColor = true;
+            this.btnAddApp.Click += new System.EventHandler(this.btnAddApp_Click);
             // 
             // btnAddNSup
             // 
@@ -137,69 +130,12 @@
             this.dgvSupl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSupl.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvSupl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSupl.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.firm,
-            this.stuff,
-            this.amount,
-            this.dateOfZakaz,
-            this.status,
-            this.upDate,
-            this.how_much,
-            this.ceh});
             this.dgvSupl.Location = new System.Drawing.Point(12, 159);
             this.dgvSupl.Name = "dgvSupl";
             this.dgvSupl.ShowEditingIcon = false;
             this.dgvSupl.Size = new System.Drawing.Size(768, 273);
             this.dgvSupl.TabIndex = 10;
-            // 
-            // firm
-            // 
-            this.firm.HeaderText = "Поставщик";
-            this.firm.Name = "firm";
-            this.firm.ReadOnly = true;
-            // 
-            // stuff
-            // 
-            this.stuff.HeaderText = "Заказ";
-            this.stuff.Name = "stuff";
-            // 
-            // amount
-            // 
-            this.amount.HeaderText = "Количество";
-            this.amount.Name = "amount";
-            // 
-            // dateOfZakaz
-            // 
-            this.dateOfZakaz.HeaderText = "День заказа";
-            this.dateOfZakaz.Name = "dateOfZakaz";
-            this.dateOfZakaz.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "Статус";
-            this.status.Items.AddRange(new object[] {
-            "Заявка принята",
-            "Ожидается",
-            "На складе"});
-            this.status.Name = "status";
-            this.status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // upDate
-            // 
-            this.upDate.HeaderText = "Дата нового статуса";
-            this.upDate.Name = "upDate";
-            // 
-            // how_much
-            // 
-            this.how_much.HeaderText = "Процент оплаченного";
-            this.how_much.Name = "how_much";
-            // 
-            // ceh
-            // 
-            this.ceh.HeaderText = "Цех";
-            this.ceh.Name = "ceh";
-            this.ceh.ReadOnly = true;
+            this.dgvSupl.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvSupl_RowPostPaint);
             // 
             // Main
             // 
@@ -236,13 +172,5 @@
         private System.Windows.Forms.Button btnAddApp;
         private System.Windows.Forms.Button btnAddNSup;
         private System.Windows.Forms.DataGridView dgvSupl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stuff;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfZakaz;
-        private System.Windows.Forms.DataGridViewComboBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn upDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn how_much;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ceh;
     }
 }

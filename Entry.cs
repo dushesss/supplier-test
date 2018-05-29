@@ -16,5 +16,11 @@ namespace Supplier
         {
             InitializeComponent();
         }
+
+        private void btnGuest_Click(object sender, EventArgs e)
+        {
+            Main m = new Main();
+            m.Show();
+        }
     }
 }
