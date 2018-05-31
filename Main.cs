@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace Supplier
@@ -6,7 +7,8 @@ namespace Supplier
     public partial class Main : Form
     {
         OpenDB open = new OpenDB();
-        List<zak> zakaz = new List<zak>();
+        BindingList<zak> zakaz = new BindingList<zak>();
+        
 
         public Main()
         {
@@ -18,7 +20,11 @@ namespace Supplier
 
         public void AddStolb()
         {
-
+            dgvSupl.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "id",
+                HeaderText = "id"
+            });
             dgvSupl.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "post",
@@ -63,17 +69,34 @@ namespace Supplier
 
         private void btnAddApp_Click(object sender, System.EventArgs e)
         {
-            NewOrder order = new NewOrder(zakaz);
-            MessageBox.Show(zakaz.Count.ToString());
+            NewOrder order = new NewOrder(zakaz, (int)(dgvSupl.Rows[dgvSupl.Rows.Count-1].Cells[0].Value));
             order.ShowDialog();
-
-            MessageBox.Show(zakaz.Count.ToString());
+            zakaz.Clear();
+            zakaz = open.Open();
         }
+
+
 
         private void dgvSupl_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            zakaz = open.Open();
             
+        }
+
+        private void btnDelete_Click(object sender, System.EventArgs e)
+        {
+            if (dgvSupl.CurrentRow != null)
+            {
+                int a = dgvSupl.CurrentRow.Index;
+                open.DeleteDB((int)(dgvSupl.Rows[a].Cells[0].Value));
+                zakaz.Clear();
+                zakaz = open.Open();
+            }
+        }
+
+        private void txtbxSearch_TextChanged(object sender, System.EventArgs e)
+        {
+            zakaz.Clear();
+            zakaz = open.SearchDB(txtbxSearch.Text);
         }
     }
 }

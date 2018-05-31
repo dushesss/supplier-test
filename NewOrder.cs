@@ -1,16 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace Supplier
 {
     public partial class NewOrder : Form
     {
-        List<zak> zakaz;
-        public NewOrder(List<zak> zakaz)
+        BindingList<zak> zakaz;
+        OpenDB open = new OpenDB();
+        int id;
+
+        public NewOrder()
+        {
+            InitializeComponent();   
+        }
+
+        public NewOrder(BindingList<zak> zakaz, int id)
         {
             InitializeComponent();
             this.zakaz = zakaz;
+            this.id = id;
         }
 
         private void btnSendEmail_Click(object sender, EventArgs e)
@@ -19,16 +29,12 @@ namespace Supplier
             Close();
         }
 
-        public List<zak> Zaks()
-        {
-            return zakaz;
-        }
 
         private void AddSql()
         {
-            OpenDB open = new OpenDB();
+            id++;
             open.AddDB(cmbxSupl.Text, txtbxEmailText.Text, Convert.ToInt32(txtbxAmount.Text), dtpDateOfApp.Text, "статус", dtpDateOfApp.Text, (float)Convert.ToDouble(txtbxHowMuch.Text), cmbxCeh.Text);
-            zakaz.Add(new zak(cmbxSupl.Text, txtbxEmailText.Text, Convert.ToInt32(txtbxAmount.Text), dtpDateOfApp.Text, "статус", dtpDateOfApp.Text, (float)Convert.ToDouble(txtbxHowMuch.Text), cmbxCeh.Text));
+            
         }
     }
 }
