@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows;
+
 
 namespace Supplier
 {
@@ -21,6 +23,7 @@ namespace Supplier
         {
             Main m = new Main();
             m.Show();
+            this.Owner = m;
             this.Hide();
         }
 
