@@ -28,103 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtbxSearch = new System.Windows.Forms.TextBox();
             this.chlbxCeh = new System.Windows.Forms.CheckedListBox();
             this.btnAddApp = new System.Windows.Forms.Button();
             this.btnAddNSup = new System.Windows.Forms.Button();
             this.dgvSupl = new System.Windows.Forms.DataGridView();
-            this.firm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stuff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfZakaz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.upDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.how_much = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ceh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOptions = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblSearch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupl)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(432, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 38);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Загрузить базу данных";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(350, 115);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 38);
-            this.btnUpdate.TabIndex = 18;
-            this.btnUpdate.Text = "Обновить таблицу";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(262, 115);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(81, 38);
-            this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "Сохранить базу данных";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(180, 115);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(76, 38);
-            this.btnClose.TabIndex = 16;
-            this.btnClose.Text = "Выйти";
-            this.btnClose.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(180, 9);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(76, 20);
-            this.btnSearch.TabIndex = 15;
-            this.btnSearch.Text = "Поиск";
-            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // txtbxSearch
             // 
-            this.txtbxSearch.Location = new System.Drawing.Point(12, 9);
+            this.txtbxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbxSearch.Location = new System.Drawing.Point(363, 80);
             this.txtbxSearch.Name = "txtbxSearch";
-            this.txtbxSearch.Size = new System.Drawing.Size(161, 20);
+            this.txtbxSearch.Size = new System.Drawing.Size(414, 20);
             this.txtbxSearch.TabIndex = 14;
+            this.txtbxSearch.TextChanged += new System.EventHandler(this.txtbxSearch_TextChanged);
             // 
             // chlbxCeh
             // 
+            this.chlbxCeh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.chlbxCeh.FormattingEnabled = true;
             this.chlbxCeh.Items.AddRange(new object[] {
             "Цех 1",
             "Цех 2",
             "Цех 3"});
-            this.chlbxCeh.Location = new System.Drawing.Point(12, 35);
+            this.chlbxCeh.Location = new System.Drawing.Point(8, 27);
             this.chlbxCeh.Name = "chlbxCeh";
-            this.chlbxCeh.Size = new System.Drawing.Size(244, 79);
+            this.chlbxCeh.Size = new System.Drawing.Size(769, 49);
             this.chlbxCeh.TabIndex = 13;
             // 
             // btnAddApp
             // 
-            this.btnAddApp.Location = new System.Drawing.Point(95, 115);
+            this.btnAddApp.Location = new System.Drawing.Point(8, 123);
             this.btnAddApp.Name = "btnAddApp";
             this.btnAddApp.Size = new System.Drawing.Size(81, 38);
             this.btnAddApp.TabIndex = 12;
             this.btnAddApp.Text = "Новый заказ";
             this.btnAddApp.UseVisualStyleBackColor = true;
+            this.btnAddApp.Click += new System.EventHandler(this.btnAddApp_Click);
             // 
             // btnAddNSup
             // 
-            this.btnAddNSup.Location = new System.Drawing.Point(12, 115);
+            this.btnAddNSup.Location = new System.Drawing.Point(8, 79);
             this.btnAddNSup.Name = "btnAddNSup";
             this.btnAddNSup.Size = new System.Drawing.Size(81, 38);
             this.btnAddNSup.TabIndex = 11;
@@ -134,115 +90,119 @@
             // dgvSupl
             // 
             this.dgvSupl.AllowUserToAddRows = false;
+            this.dgvSupl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSupl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSupl.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvSupl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSupl.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.firm,
-            this.stuff,
-            this.amount,
-            this.dateOfZakaz,
-            this.status,
-            this.upDate,
-            this.how_much,
-            this.ceh});
-            this.dgvSupl.Location = new System.Drawing.Point(12, 159);
+            this.dgvSupl.Location = new System.Drawing.Point(95, 104);
             this.dgvSupl.Name = "dgvSupl";
             this.dgvSupl.ShowEditingIcon = false;
-            this.dgvSupl.Size = new System.Drawing.Size(768, 273);
+            this.dgvSupl.Size = new System.Drawing.Size(682, 293);
             this.dgvSupl.TabIndex = 10;
+            this.dgvSupl.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvSupl_RowPostPaint);
             // 
-            // firm
+            // btnDelete
             // 
-            this.firm.HeaderText = "Поставщик";
-            this.firm.Name = "firm";
-            this.firm.ReadOnly = true;
+            this.btnDelete.Location = new System.Drawing.Point(8, 167);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(81, 38);
+            this.btnDelete.TabIndex = 20;
+            this.btnDelete.Text = "Удалить строку";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // stuff
+            // menuStrip1
             // 
-            this.stuff.HeaderText = "Заказ";
-            this.stuff.Name = "stuff";
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(789, 24);
+            this.menuStrip1.TabIndex = 21;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // amount
+            // menuToolStripMenuItem
             // 
-            this.amount.HeaderText = "Количество";
-            this.amount.Name = "amount";
+            this.menuToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.menuToolStripMenuItem.CheckOnClick = true;
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiOptions,
+            this.tsmiInfo,
+            this.tsmiExit});
+            this.menuToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.menuToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.menuToolStripMenuItem.Text = "Меню";
             // 
-            // dateOfZakaz
+            // tsmiOptions
             // 
-            this.dateOfZakaz.HeaderText = "День заказа";
-            this.dateOfZakaz.Name = "dateOfZakaz";
-            this.dateOfZakaz.ReadOnly = true;
+            this.tsmiOptions.Name = "tsmiOptions";
+            this.tsmiOptions.Size = new System.Drawing.Size(148, 22);
+            this.tsmiOptions.Text = "Настройки";
             // 
-            // status
+            // tsmiInfo
             // 
-            this.status.HeaderText = "Статус";
-            this.status.Items.AddRange(new object[] {
-            "Заявка принята",
-            "Ожидается",
-            "На складе"});
-            this.status.Name = "status";
-            this.status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.tsmiInfo.Name = "tsmiInfo";
+            this.tsmiInfo.Size = new System.Drawing.Size(148, 22);
+            this.tsmiInfo.Text = "Информация";
             // 
-            // upDate
+            // tsmiExit
             // 
-            this.upDate.HeaderText = "Дата нового статуса";
-            this.upDate.Name = "upDate";
+            this.tsmiExit.Name = "tsmiExit";
+            this.tsmiExit.Size = new System.Drawing.Size(148, 22);
+            this.tsmiExit.Text = "Выход";
             // 
-            // how_much
+            // lblSearch
             // 
-            this.how_much.HeaderText = "Процент оплаченного";
-            this.how_much.Name = "how_much";
-            // 
-            // ceh
-            // 
-            this.ceh.HeaderText = "Цех";
-            this.ceh.Name = "ceh";
-            this.ceh.ReadOnly = true;
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(95, 83);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(262, 13);
+            this.lblSearch.TabIndex = 22;
+            this.lblSearch.Text = "Введите в поле для поиска искомую информацию";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 443);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnSearch);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientSize = new System.Drawing.Size(789, 405);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtbxSearch);
             this.Controls.Add(this.chlbxCeh);
             this.Controls.Add(this.btnAddApp);
             this.Controls.Add(this.btnAddNSup);
             this.Controls.Add(this.dgvSupl);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Главная";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupl)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtbxSearch;
         private System.Windows.Forms.CheckedListBox chlbxCeh;
         private System.Windows.Forms.Button btnAddApp;
         private System.Windows.Forms.Button btnAddNSup;
         private System.Windows.Forms.DataGridView dgvSupl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stuff;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfZakaz;
-        private System.Windows.Forms.DataGridViewComboBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn upDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn how_much;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ceh;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOptions;
+        private System.Windows.Forms.ToolStripMenuItem tsmiInfo;
+        private System.Windows.Forms.ToolStripMenuItem tsmiExit;
+        private System.Windows.Forms.Label lblSearch;
     }
 }

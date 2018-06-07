@@ -45,6 +45,7 @@
             this.btnGuest.TabIndex = 13;
             this.btnGuest.Text = "Войти как гость";
             this.btnGuest.UseVisualStyleBackColor = true;
+            this.btnGuest.Click += new System.EventHandler(this.btnGuest_Click);
             // 
             // btnEnter
             // 
@@ -55,6 +56,7 @@
             this.btnEnter.TabIndex = 12;
             this.btnEnter.Text = "Войти";
             this.btnEnter.UseVisualStyleBackColor = true;
+            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
             // txtbxPass
             // 
@@ -99,7 +101,7 @@
             this.lblLogin.TabIndex = 7;
             this.lblLogin.Text = "Логин";
             // 
-            // Form1
+            // Entry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -111,7 +113,7 @@
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblLogin);
-            this.Name = "Form1";
+            this.Name = "Entry";
             this.Text = "Вход";
             this.ResumeLayout(false);
             this.PerformLayout();

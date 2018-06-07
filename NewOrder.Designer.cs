@@ -177,6 +177,7 @@
             this.btnSendEmail.TabIndex = 28;
             this.btnSendEmail.Text = "Отправить поставщику";
             this.btnSendEmail.UseVisualStyleBackColor = true;
+            this.btnSendEmail.Click += new System.EventHandler(this.btnSendEmail_Click);
             // 
             // txtbxEmailText
             // 
@@ -216,6 +217,10 @@
             // 
             this.cmbxSupl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxSupl.FormattingEnabled = true;
+            this.cmbxSupl.Items.AddRange(new object[] {
+            "пост 1",
+            "пост 2",
+            "пост 3"});
             this.cmbxSupl.Location = new System.Drawing.Point(106, 13);
             this.cmbxSupl.Name = "cmbxSupl";
             this.cmbxSupl.Size = new System.Drawing.Size(166, 21);

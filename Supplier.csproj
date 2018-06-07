@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -75,8 +76,10 @@
     <Compile Include="NewSupplier.Designer.cs">
       <DependentUpon>NewSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="openDB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="zak.cs" />
     <EmbeddedResource Include="Entry.resx">
       <DependentUpon>Entry.cs</DependentUpon>
     </EmbeddedResource>
