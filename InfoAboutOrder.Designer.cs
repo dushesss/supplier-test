@@ -34,12 +34,10 @@
             this.txtbxAmount = new System.Windows.Forms.TextBox();
             this.txtbxOrder = new System.Windows.Forms.TextBox();
             this.lblOrder = new System.Windows.Forms.Label();
-            this.txtbxPer = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpDOfZ = new System.Windows.Forms.DateTimePicker();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAccept = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.cmbxStatus = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtbxTextEm = new System.Windows.Forms.TextBox();
@@ -48,12 +46,17 @@
             this.txtbxEmSpl = new System.Windows.Forms.TextBox();
             this.txtbxSupl = new System.Windows.Forms.TextBox();
             this.lblSupl = new System.Windows.Forms.Label();
+            this.txtbxHowMuch = new System.Windows.Forms.TextBox();
+            this.txtbxCost = new System.Windows.Forms.TextBox();
+            this.lblCost = new System.Windows.Forms.Label();
+            this.lblHowMuch = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(134, 374);
+            this.label5.Location = new System.Drawing.Point(134, 392);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 40;
@@ -61,7 +64,7 @@
             // 
             // txtbxCeh
             // 
-            this.txtbxCeh.Location = new System.Drawing.Point(166, 371);
+            this.txtbxCeh.Location = new System.Drawing.Point(166, 389);
             this.txtbxCeh.Name = "txtbxCeh";
             this.txtbxCeh.ReadOnly = true;
             this.txtbxCeh.Size = new System.Drawing.Size(162, 20);
@@ -99,14 +102,7 @@
             this.lblOrder.Name = "lblOrder";
             this.lblOrder.Size = new System.Drawing.Size(38, 13);
             this.lblOrder.TabIndex = 35;
-            this.lblOrder.Text = "Заказ";
-            // 
-            // txtbxPer
-            // 
-            this.txtbxPer.Location = new System.Drawing.Point(166, 341);
-            this.txtbxPer.Name = "txtbxPer";
-            this.txtbxPer.Size = new System.Drawing.Size(162, 20);
-            this.txtbxPer.TabIndex = 34;
+            this.lblOrder.Text = "Товар";
             // 
             // label3
             // 
@@ -127,30 +123,21 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(166, 397);
+            this.btnCancel.Location = new System.Drawing.Point(168, 447);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(162, 23);
+            this.btnCancel.Size = new System.Drawing.Size(160, 28);
             this.btnCancel.TabIndex = 31;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(12, 397);
+            this.btnAccept.Location = new System.Drawing.Point(166, 415);
             this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(150, 23);
+            this.btnAccept.Size = new System.Drawing.Size(162, 26);
             this.btnAccept.TabIndex = 30;
             this.btnAccept.Text = "Сохранить изменения";
             this.btnAccept.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(104, 344);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Оплачено";
             // 
             // cmbxStatus
             // 
@@ -226,23 +213,67 @@
             this.lblSupl.TabIndex = 21;
             this.lblSupl.Text = "Поставщик";
             // 
+            // txtbxHowMuch
+            // 
+            this.txtbxHowMuch.Location = new System.Drawing.Point(166, 363);
+            this.txtbxHowMuch.Name = "txtbxHowMuch";
+            this.txtbxHowMuch.Size = new System.Drawing.Size(162, 20);
+            this.txtbxHowMuch.TabIndex = 44;
+            // 
+            // txtbxCost
+            // 
+            this.txtbxCost.Location = new System.Drawing.Point(166, 337);
+            this.txtbxCost.Name = "txtbxCost";
+            this.txtbxCost.Size = new System.Drawing.Size(162, 20);
+            this.txtbxCost.TabIndex = 43;
+            // 
+            // lblCost
+            // 
+            this.lblCost.AutoSize = true;
+            this.lblCost.Location = new System.Drawing.Point(98, 340);
+            this.lblCost.Name = "lblCost";
+            this.lblCost.Size = new System.Drawing.Size(62, 13);
+            this.lblCost.TabIndex = 42;
+            this.lblCost.Text = "Стоимость";
+            // 
+            // lblHowMuch
+            // 
+            this.lblHowMuch.AutoSize = true;
+            this.lblHowMuch.Location = new System.Drawing.Point(104, 366);
+            this.lblHowMuch.Name = "lblHowMuch";
+            this.lblHowMuch.Size = new System.Drawing.Size(56, 13);
+            this.lblHowMuch.TabIndex = 41;
+            this.lblHowMuch.Text = "Оплачено";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 415);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 60);
+            this.button1.TabIndex = 45;
+            this.button1.Text = "Новый заказ на основе этого";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // InfoAboutOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 438);
+            this.ClientSize = new System.Drawing.Size(340, 485);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtbxHowMuch);
+            this.Controls.Add(this.txtbxCost);
+            this.Controls.Add(this.lblCost);
+            this.Controls.Add(this.lblHowMuch);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtbxCeh);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtbxAmount);
             this.Controls.Add(this.txtbxOrder);
             this.Controls.Add(this.lblOrder);
-            this.Controls.Add(this.txtbxPer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpDOfZ);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbxStatus);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtbxTextEm);
@@ -266,12 +297,10 @@
         private System.Windows.Forms.TextBox txtbxAmount;
         private System.Windows.Forms.TextBox txtbxOrder;
         private System.Windows.Forms.Label lblOrder;
-        private System.Windows.Forms.TextBox txtbxPer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpDOfZ;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAccept;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbxStatus;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtbxTextEm;
@@ -280,5 +309,10 @@
         private System.Windows.Forms.TextBox txtbxEmSpl;
         private System.Windows.Forms.TextBox txtbxSupl;
         private System.Windows.Forms.Label lblSupl;
+        private System.Windows.Forms.TextBox txtbxHowMuch;
+        private System.Windows.Forms.TextBox txtbxCost;
+        private System.Windows.Forms.Label lblCost;
+        private System.Windows.Forms.Label lblHowMuch;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -36,5 +36,10 @@ namespace Supplier
             open.AddDB(cmbxSupl.Text, txtbxEmailText.Text, Convert.ToInt32(txtbxAmount.Text), dtpDateOfApp.Text, "статус", dtpDateOfApp.Text, (float)Convert.ToDouble(txtbxHowMuch.Text), cmbxCeh.Text);
             
         }
+
+        private void lblStuff_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
