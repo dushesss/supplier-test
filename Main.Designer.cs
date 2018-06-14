@@ -58,6 +58,7 @@
             // 
             this.chlbxCeh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.chlbxCeh.CheckOnClick = true;
             this.chlbxCeh.FormattingEnabled = true;
             this.chlbxCeh.Items.AddRange(new object[] {
             "Цех 1",

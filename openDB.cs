@@ -13,7 +13,7 @@ namespace Supplier
 
         public BindingList<zak> Open()
         {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["main"].ConnectionString))
             {
                 try
                 {
@@ -61,7 +61,7 @@ namespace Supplier
         public void AddDB(string post, string zakaz, int kol, string date_zak, string state,
             string date_new_stat, float proc_opl, string c)
         {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["main"].ConnectionString))
             {
                 try
                 {
@@ -97,7 +97,7 @@ namespace Supplier
 
         public void DeleteDB(int id)
         {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["main"].ConnectionString))
             {
                 try
                 {
@@ -123,7 +123,7 @@ namespace Supplier
 
         public BindingList<zak> SearchDB(string searchText)
         {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["main"].ConnectionString))
             {
                 try
                 {

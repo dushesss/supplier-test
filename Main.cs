@@ -16,6 +16,9 @@ namespace Supplier
             AddStolb();
             zakaz = open.Open();
             dgvSupl.DataSource = zakaz;
+            chlbxCeh.SetItemChecked(0, true);
+            chlbxCeh.SetItemChecked(1, true);
+            chlbxCeh.SetItemChecked(2, true);
         }
 
         public void AddStolb()
@@ -75,7 +78,23 @@ namespace Supplier
             zakaz = open.Open();
         }
 
-
+        private void Search()
+        {
+            for (int i = 0; i < dgvSupl.RowCount; i++)
+            {
+                for (int j = 0; j < dgvSupl.ColumnCount; j++)
+                    if (dgvSupl.Rows[i].Cells[j].Value != null)
+                        if (dgvSupl.Rows[i].Cells[j].Value.ToString().Contains(txtbxSearch.Text))
+                        {
+                            dgvSupl.Rows[i].Visible = true;
+                            break;
+                        }
+                        else
+                        {
+                            dgvSupl.Rows[i].Visible = false;
+                        }
+            }
+        }
 
         private void dgvSupl_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
