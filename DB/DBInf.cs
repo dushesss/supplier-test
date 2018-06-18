@@ -12,7 +12,7 @@ namespace Supplier
         {
             int ID=(int)reader["ID"];
             string NamePost= reader["NamePost"].ToString();
-            int NumZak= (int)reader["NumZak"];
+            string NumZak = reader["NumZak"].ToString();
             string State= reader["State"].ToString();
             DateTime date= (DateTime)reader["Date"];
             string Cex= reader["Cex"].ToString();
@@ -54,7 +54,7 @@ namespace Supplier
             return obj;
         }
     
-        public void AddDB(string sql, string NamePost, int NumZak,
+        public void AddDB(string sql, string NamePost, string NumZak,
         string State, DateTime date, string Cex, float Price, float OplCen)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString))
@@ -72,7 +72,7 @@ namespace Supplier
             }
         }
 
-        protected void zap(string sql, SqlConnection con, string NamePost, int NumZak,
+        protected void zap(string sql, SqlConnection con, string NamePost, string NumZak,
         string State, DateTime date, string Cex, float Price, float OplCen)
         {
             using (SqlCommand command = new SqlCommand(sql, con))

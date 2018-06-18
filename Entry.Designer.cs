@@ -73,6 +73,7 @@
             this.txtbxLogin.Size = new System.Drawing.Size(189, 20);
             this.txtbxLogin.TabIndex = 10;
             this.txtbxLogin.TextChanged += new System.EventHandler(this.txtbxLogin_TextChanged);
+            this.txtbxLogin.Validating += new System.ComponentModel.CancelEventHandler(this.txtbxLogin_Validating);
             // 
             // lblDescription
             // 

@@ -11,15 +11,15 @@ namespace Supplier
         {
             int ID=(int)reader["ID"];
             string NameTov= reader["NameTov"].ToString();
-            int NumZak= (int)reader["NumZak"];
-            int Kvo= (int)reader["Kvo"];
+            string NumZak = reader["NumZak"].ToString();
+            float Kvo= (float)(double)reader["Kvo"];
             string Ed= reader["Ed"].ToString();
             string Text = reader["Text"].ToString();
 
             return new ObjZak(ID,NameTov,NumZak,Kvo,Ed, Text);
         }
 
-        public void AddDB(string sql, string NameTov, int NumZak,int Kvo, string Ed, string Text)
+        public void AddDB(string sql, string NameTov, string NumZak,int Kvo, string Ed, string Text)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString))
             {
@@ -36,7 +36,7 @@ namespace Supplier
         }
 
         protected void zap(string sql, SqlConnection con, string NameTov,
-            int NumZak, int Kvo, string Ed, string Text)
+            string NumZak, int Kvo, string Ed, string Text)
         {
             using (SqlCommand command = new SqlCommand(sql, con))
             {

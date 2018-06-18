@@ -6,7 +6,7 @@ namespace Supplier
     {
         public int ID { get; set; }
         public string NamePost { get; set; }
-        public int NumZak { get; set; }
+        public string NumZak { get; set; }
         public string State { get; set; }
         public DateTime date { get; set; }
         public string Cex { get; set; }
@@ -15,7 +15,7 @@ namespace Supplier
 
         public ObjInf() { }
         
-        public ObjInf(int id, string namepost, int numzak,
+        public ObjInf(int id, string namepost, string numzak,
             string state, DateTime Date, string cex, float price, float oplcen)
         {
             ID = id;

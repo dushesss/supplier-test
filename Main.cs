@@ -49,9 +49,9 @@ namespace Supplier
         private void btnDelete_Click(object sender, System.EventArgs e)
         {
             int a= dgvSupl.CurrentRow.Index;
-            int id=(int)(dgvSupl.Rows[a].Cells["NumZak"].Value);
-            string sqlInfo = string.Format("Delete from Info where NumZak = '{0}'", id);
-            string sqlZakaz = string.Format("Delete from Zakaz where NumZak = '{0}'", id);
+            int id = (int)dgvSupl.Rows[a].Cells["ID"].Value;
+            string sqlInfo = string.Format("Delete from Info where ID = '{0}'", id);
+            string sqlZakaz = string.Format("Delete from Zakaz where ID = '{0}'", id);
             inf.Delite(sqlInfo, id);
             inf.Delite(sqlZakaz, id);
             Restart();

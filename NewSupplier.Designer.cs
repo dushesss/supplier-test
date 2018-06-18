@@ -53,6 +53,7 @@
             this.txtbxEmailSup.Name = "txtbxEmailSup";
             this.txtbxEmailSup.Size = new System.Drawing.Size(174, 20);
             this.txtbxEmailSup.TabIndex = 8;
+            this.txtbxEmailSup.Validating += new System.ComponentModel.CancelEventHandler(this.txtbxEmailSup_Validating);
             // 
             // txtbxNSup
             // 

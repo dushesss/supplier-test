@@ -39,7 +39,7 @@ namespace Supplier
             
 
             string NamePost= cmbxSupl.SelectedItem.ToString();
-            int NumZak= rand.Next();
+            string NumZak = rand.Next().ToString();
             string State="ожидается";
             DateTime date= dtpDateOfApp.Value;
             string Text= txtbxEmailText.Text.ToString();

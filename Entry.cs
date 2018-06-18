@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,6 +34,7 @@ namespace Supplier
         private void btnEnter_Click(object sender, EventArgs e)
         {
             if (log && pas) {
+                
                 this.Visible = false;
                 Main m = new Main(log);
                 m.ShowDialog();
@@ -55,6 +57,21 @@ namespace Supplier
         private void txtbxPass_TextChanged(object sender, EventArgs e)
         {
             pas = true;
+        }
+
+        private void txtbxLogin_Validating(object sender, CancelEventArgs e)
+        {
+            if (!ValidEmailAddress(txtbxLogin.Text))
+            {
+                e.Cancel = true;
+                txtbxLogin.Select(0, txtbxLogin.Text.Length);
+            }
+        }
+
+        private bool ValidEmailAddress(string email)
+        {
+            string regexPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+            return Regex.IsMatch(email, regexPattern);
         }
     }
 }

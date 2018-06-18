@@ -68,12 +68,12 @@ namespace Supplier
 
             foreach (ObjZak p in zak)
             {
-                if (p.NumZak == info[id].NumZak)
+                if (p.NumZak ==info[id].NumZak)
                 {
                     idZ = p.ID;
-                    tbNumZak.Text = p.NumZak.ToString();
-                    txtbxAmount.Text = p.NameTov;
-                    txtbxOrder.Text = p.Kvo.ToString();
+                    tbNumZak.Text = p.NumZak;
+                    txtbxAmount.Text = p.Kvo.ToString();
+                    txtbxOrder.Text = p.NameTov;
                     txtbxEdIzm.Text = p.Ed;
                     txtbxTextEm.Text = p.Text;
                     break;
@@ -103,10 +103,10 @@ namespace Supplier
         private void addInf()
         {
             string NamePost = txtbxSupl.Text;
-            int NumZak = 0;
+            string NumZak=" ";
             if (tbNumZak.Text != "" && tbNumZak.Text != null)
             {
-                NumZak = Convert.ToInt32(tbNumZak.Text);
+                NumZak = tbNumZak.Text;
             }
             string State = cmbxStatus.Text;
             DateTime date = dtpDOfZ.Value;
@@ -123,10 +123,10 @@ namespace Supplier
         private void addZak()
         {
             string NameTov = txtbxOrder.Text;
-            int NumZak = 0;
+            string NumZak=" ";
             if (tbNumZak.Text != "" && tbNumZak.Text != null)
             {
-                NumZak = Convert.ToInt32(tbNumZak.Text);
+                NumZak = tbNumZak.Text;
             }
             int Kvo = 0;
             if (txtbxAmount.Text != "" && txtbxAmount.Text != null)
