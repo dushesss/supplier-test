@@ -48,13 +48,20 @@ namespace Supplier
 
         private void btnDelete_Click(object sender, System.EventArgs e)
         {
-            int a= dgvSupl.CurrentRow.Index;
-            int id = (int)dgvSupl.Rows[a].Cells["ID"].Value;
-            string sqlInfo = string.Format("Delete from Info where ID = '{0}'", id);
-            string sqlZakaz = string.Format("Delete from Zakaz where ID = '{0}'", id);
-            inf.Delite(sqlInfo, id);
-            inf.Delite(sqlZakaz, id);
-            Restart();
+            try
+            {
+                int a = dgvSupl.CurrentRow.Index;
+                int id = (int)dgvSupl.Rows[a].Cells["ID"].Value;
+                string sqlInfo = string.Format("Delete from Info where ID = '{0}'", id);
+                string sqlZakaz = string.Format("Delete from Zakaz where ID = '{0}'", id);
+                inf.Delite(sqlInfo, id);
+                inf.Delite(sqlZakaz, id);
+                Restart();
+            }
+            catch
+            {
+                MessageBox.Show("ошибка удаления");
+            }
         }
 
         private void txtbxSearch_TextChanged(object sender, System.EventArgs e)

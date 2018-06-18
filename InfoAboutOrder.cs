@@ -95,9 +95,16 @@ namespace Supplier
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            addInf();
-            addZak();
-            Close();
+            try
+            {
+                addInf();
+                addZak();
+                Close();
+            }
+            catch
+            {
+                MessageBox.Show("ошибка данных");
+            }
         }
 
         private void addInf()

@@ -27,8 +27,15 @@ namespace Supplier
 
         private void btnSendEmail_Click(object sender, EventArgs e)
         {
-            AddSql();
-            Close();
+            try
+            {
+                AddSql();
+                Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка данных");
+            } 
         }
 
         private void AddSql()
@@ -36,7 +43,6 @@ namespace Supplier
             DBInf inf = new DBInf();
             DBZak zak = new DBZak();
             Random rand = new Random();
-            
 
             string NamePost= cmbxSupl.SelectedItem.ToString();
             string NumZak = rand.Next().ToString();

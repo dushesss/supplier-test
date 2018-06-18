@@ -27,6 +27,8 @@ namespace Supplier
             Main m = new Main();
             m.ShowDialog();
             this.Visible = true;
+            txtbxLogin.Text = "";
+            txtbxPass.Text = "";
             log = false;
             pas = false;
         }
