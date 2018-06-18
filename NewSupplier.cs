@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Supplier
@@ -15,6 +8,20 @@ namespace Supplier
         public NewSupplier()
         {
             InitializeComponent();
+        }
+
+        private void btnAddSpl_Click(object sender, EventArgs e)
+        {
+            string Name = txtbxNSup.Text;
+            string Email = txtbxEmailSup.Text;
+            string Number = txtbxPhoneNumber.Text;
+
+            DBPost db = new DBPost();
+
+            db.AddDB(Name,Email,Number);
+
+            MessageBox.Show("Добавление выполнено!");
+            Close();
         }
     }
 }

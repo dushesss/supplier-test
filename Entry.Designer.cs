@@ -49,13 +49,13 @@
             // 
             // btnEnter
             // 
-            this.btnEnter.Enabled = false;
             this.btnEnter.Location = new System.Drawing.Point(12, 152);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.Size = new System.Drawing.Size(107, 28);
             this.btnEnter.TabIndex = 12;
             this.btnEnter.Text = "Войти";
             this.btnEnter.UseVisualStyleBackColor = true;
+            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
             // txtbxPass
             // 
@@ -64,6 +64,7 @@
             this.txtbxPass.Size = new System.Drawing.Size(189, 20);
             this.txtbxPass.TabIndex = 11;
             this.txtbxPass.UseSystemPasswordChar = true;
+            this.txtbxPass.TextChanged += new System.EventHandler(this.txtbxPass_TextChanged);
             // 
             // txtbxLogin
             // 
@@ -71,6 +72,7 @@
             this.txtbxLogin.Name = "txtbxLogin";
             this.txtbxLogin.Size = new System.Drawing.Size(189, 20);
             this.txtbxLogin.TabIndex = 10;
+            this.txtbxLogin.TextChanged += new System.EventHandler(this.txtbxLogin_TextChanged);
             // 
             // lblDescription
             // 

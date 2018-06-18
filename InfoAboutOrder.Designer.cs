@@ -48,12 +48,21 @@
             this.txtbxEmSpl = new System.Windows.Forms.TextBox();
             this.txtbxSupl = new System.Windows.Forms.TextBox();
             this.lblSupl = new System.Windows.Forms.Label();
+            this.tbNumZak = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbPrice = new System.Windows.Forms.TextBox();
+            this.tbNum = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblEdIzm = new System.Windows.Forms.Label();
+            this.txtbxEdIzm = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(134, 374);
+            this.label5.Location = new System.Drawing.Point(134, 441);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 40;
@@ -61,7 +70,7 @@
             // 
             // txtbxCeh
             // 
-            this.txtbxCeh.Location = new System.Drawing.Point(166, 371);
+            this.txtbxCeh.Location = new System.Drawing.Point(166, 438);
             this.txtbxCeh.Name = "txtbxCeh";
             this.txtbxCeh.ReadOnly = true;
             this.txtbxCeh.Size = new System.Drawing.Size(162, 20);
@@ -70,7 +79,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(94, 283);
+            this.label4.Location = new System.Drawing.Point(94, 327);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 38;
@@ -78,15 +87,15 @@
             // 
             // txtbxAmount
             // 
-            this.txtbxAmount.Location = new System.Drawing.Point(166, 280);
+            this.txtbxAmount.Location = new System.Drawing.Point(166, 324);
             this.txtbxAmount.Name = "txtbxAmount";
             this.txtbxAmount.ReadOnly = true;
-            this.txtbxAmount.Size = new System.Drawing.Size(162, 20);
+            this.txtbxAmount.Size = new System.Drawing.Size(71, 20);
             this.txtbxAmount.TabIndex = 37;
             // 
             // txtbxOrder
             // 
-            this.txtbxOrder.Location = new System.Drawing.Point(166, 250);
+            this.txtbxOrder.Location = new System.Drawing.Point(166, 294);
             this.txtbxOrder.Name = "txtbxOrder";
             this.txtbxOrder.ReadOnly = true;
             this.txtbxOrder.Size = new System.Drawing.Size(162, 20);
@@ -95,15 +104,15 @@
             // lblOrder
             // 
             this.lblOrder.AutoSize = true;
-            this.lblOrder.Location = new System.Drawing.Point(122, 253);
+            this.lblOrder.Location = new System.Drawing.Point(122, 297);
             this.lblOrder.Name = "lblOrder";
             this.lblOrder.Size = new System.Drawing.Size(38, 13);
             this.lblOrder.TabIndex = 35;
-            this.lblOrder.Text = "Заказ";
+            this.lblOrder.Text = "Товар";
             // 
             // txtbxPer
             // 
-            this.txtbxPer.Location = new System.Drawing.Point(166, 341);
+            this.txtbxPer.Location = new System.Drawing.Point(166, 408);
             this.txtbxPer.Name = "txtbxPer";
             this.txtbxPer.Size = new System.Drawing.Size(162, 20);
             this.txtbxPer.TabIndex = 34;
@@ -111,7 +120,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(88, 226);
+            this.label3.Location = new System.Drawing.Point(88, 270);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 33;
@@ -120,33 +129,36 @@
             // dtpDOfZ
             // 
             this.dtpDOfZ.Enabled = false;
-            this.dtpDOfZ.Location = new System.Drawing.Point(166, 220);
+            this.dtpDOfZ.Location = new System.Drawing.Point(166, 264);
             this.dtpDOfZ.Name = "dtpDOfZ";
             this.dtpDOfZ.Size = new System.Drawing.Size(162, 20);
             this.dtpDOfZ.TabIndex = 32;
+            this.dtpDOfZ.Value = new System.DateTime(2018, 6, 6, 0, 0, 0, 0);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(166, 397);
+            this.btnCancel.Location = new System.Drawing.Point(166, 464);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(162, 23);
             this.btnCancel.TabIndex = 31;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(12, 397);
+            this.btnAccept.Location = new System.Drawing.Point(12, 464);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(150, 23);
             this.btnAccept.TabIndex = 30;
             this.btnAccept.Text = "Сохранить изменения";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(104, 344);
+            this.label2.Location = new System.Drawing.Point(104, 411);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 29;
@@ -154,13 +166,17 @@
             // 
             // cmbxStatus
             // 
+            this.cmbxStatus.AutoCompleteCustomSource.AddRange(new string[] {
+            "ожидается",
+            "готов",
+            "не готов"});
             this.cmbxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxStatus.FormattingEnabled = true;
             this.cmbxStatus.Items.AddRange(new object[] {
             "Заявка принята",
             "Ожидается",
             "На складе"});
-            this.cmbxStatus.Location = new System.Drawing.Point(166, 310);
+            this.cmbxStatus.Location = new System.Drawing.Point(166, 354);
             this.cmbxStatus.Name = "cmbxStatus";
             this.cmbxStatus.Size = new System.Drawing.Size(162, 21);
             this.cmbxStatus.TabIndex = 28;
@@ -168,7 +184,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(119, 313);
+            this.label1.Location = new System.Drawing.Point(119, 357);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 27;
@@ -176,7 +192,7 @@
             // 
             // txtbxTextEm
             // 
-            this.txtbxTextEm.Location = new System.Drawing.Point(12, 97);
+            this.txtbxTextEm.Location = new System.Drawing.Point(12, 115);
             this.txtbxTextEm.Multiline = true;
             this.txtbxTextEm.Name = "txtbxTextEm";
             this.txtbxTextEm.ReadOnly = true;
@@ -186,7 +202,7 @@
             // lblTextEm
             // 
             this.lblTextEm.AutoSize = true;
-            this.lblTextEm.Location = new System.Drawing.Point(123, 74);
+            this.lblTextEm.Location = new System.Drawing.Point(123, 92);
             this.lblTextEm.Name = "lblTextEm";
             this.lblTextEm.Size = new System.Drawing.Size(97, 13);
             this.lblTextEm.TabIndex = 25;
@@ -214,6 +230,7 @@
             this.txtbxSupl.Location = new System.Drawing.Point(166, 11);
             this.txtbxSupl.Name = "txtbxSupl";
             this.txtbxSupl.ReadOnly = true;
+            this.txtbxSupl.ShortcutsEnabled = false;
             this.txtbxSupl.Size = new System.Drawing.Size(162, 20);
             this.txtbxSupl.TabIndex = 22;
             // 
@@ -226,11 +243,94 @@
             this.lblSupl.TabIndex = 21;
             this.lblSupl.Text = "Поставщик";
             // 
+            // tbNumZak
+            // 
+            this.tbNumZak.Location = new System.Drawing.Point(166, 238);
+            this.tbNumZak.Name = "tbNumZak";
+            this.tbNumZak.Size = new System.Drawing.Size(162, 20);
+            this.tbNumZak.TabIndex = 41;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(103, 241);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "№ заказа";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(127, 385);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 13);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "Цена";
+            // 
+            // tbPrice
+            // 
+            this.tbPrice.Location = new System.Drawing.Point(166, 382);
+            this.tbPrice.Name = "tbPrice";
+            this.tbPrice.Size = new System.Drawing.Size(162, 20);
+            this.tbPrice.TabIndex = 44;
+            // 
+            // tbNum
+            // 
+            this.tbNum.Location = new System.Drawing.Point(166, 65);
+            this.tbNum.Name = "tbNum";
+            this.tbNum.ReadOnly = true;
+            this.tbNum.Size = new System.Drawing.Size(162, 20);
+            this.tbNum.TabIndex = 45;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(110, 68);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 13);
+            this.label8.TabIndex = 46;
+            this.label8.Text = "Телефон";
+            // 
+            // lblEdIzm
+            // 
+            this.lblEdIzm.AutoSize = true;
+            this.lblEdIzm.Location = new System.Drawing.Point(244, 327);
+            this.lblEdIzm.Name = "lblEdIzm";
+            this.lblEdIzm.Size = new System.Drawing.Size(37, 13);
+            this.lblEdIzm.TabIndex = 48;
+            this.lblEdIzm.Text = "ед.из.";
+            // 
+            // txtbxEdIzm
+            // 
+            this.txtbxEdIzm.Location = new System.Drawing.Point(287, 324);
+            this.txtbxEdIzm.Name = "txtbxEdIzm";
+            this.txtbxEdIzm.Size = new System.Drawing.Size(41, 20);
+            this.txtbxEdIzm.TabIndex = 47;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 49;
+            this.label9.Text = "label9";
+            // 
             // InfoAboutOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 438);
+            this.ClientSize = new System.Drawing.Size(340, 499);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblEdIzm);
+            this.Controls.Add(this.txtbxEdIzm);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.tbNum);
+            this.Controls.Add(this.tbPrice);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tbNumZak);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtbxCeh);
             this.Controls.Add(this.label4);
@@ -280,5 +380,14 @@
         private System.Windows.Forms.TextBox txtbxEmSpl;
         private System.Windows.Forms.TextBox txtbxSupl;
         private System.Windows.Forms.Label lblSupl;
+        private System.Windows.Forms.TextBox tbNumZak;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tbPrice;
+        private System.Windows.Forms.TextBox tbNum;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblEdIzm;
+        private System.Windows.Forms.TextBox txtbxEdIzm;
+        private System.Windows.Forms.Label label9;
     }
 }

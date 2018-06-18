@@ -1,79 +1,122 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace Supplier
 {
     public partial class Main : Form
     {
-        OpenDB open = new OpenDB();
-        List<zak> zakaz = new List<zak>();
+        DBInf inf = new DBInf();
+        BindingList<ObjInf> info;
+        bool ParamVhod = false;
 
         public Main()
         {
             InitializeComponent();
-            AddStolb();
-            zakaz = open.Open();
-            dgvSupl.DataSource = zakaz;
+            btnAddApp.Enabled = false;
+            btnDelete.Enabled = false;
+            info = inf.Open("Info");
+            dgvSupl.DataSource = info;
+            Rename(); 
         }
-
-        public void AddStolb()
+        public Main(bool a)
         {
-
-            dgvSupl.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "post",
-                HeaderText = "поставщик"
-            });
-            dgvSupl.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "zakaz",
-                HeaderText = "заказ"
-            });
-            dgvSupl.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "kol",
-                HeaderText = "кол-во"
-            });
-            dgvSupl.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "date_zak",
-                HeaderText = "день заказа"
-            });
-            dgvSupl.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "state",
-                HeaderText = "статус"
-            });
-            dgvSupl.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "date_new_stat",
-                HeaderText = "дата нового статуса"
-            });
-            dgvSupl.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "proc_opl",
-                HeaderText = "процент оплаченного"
-            });
-            dgvSupl.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "c",
-                HeaderText = "цеха"
-            });
+            ParamVhod = a;
+            InitializeComponent();
+            info = inf.Open("Info");
+            dgvSupl.DataSource = info;
+            Rename();
+        }
+        private void Rename()
+        {
+            dgvSupl.Columns["ID"].HeaderText = "ID";
+            dgvSupl.Columns["NamePost"].HeaderText = "Поставщик";
+            dgvSupl.Columns["NumZak"].HeaderText = "№ заказа";
+            dgvSupl.Columns["State"].HeaderText = "Статус";
+            dgvSupl.Columns["date"].HeaderText = "Дата";
+            dgvSupl.Columns["Cex"].HeaderText = "Цех";
+            dgvSupl.Columns["Price"].HeaderText = "Цена";
+            dgvSupl.Columns["OplCen"].HeaderText = "Оплачено";
         }
 
         private void btnAddApp_Click(object sender, System.EventArgs e)
         {
-            NewOrder order = new NewOrder(zakaz);
-            MessageBox.Show(zakaz.Count.ToString());
+            NewOrder order = new NewOrder();
             order.ShowDialog();
-
-            MessageBox.Show(zakaz.Count.ToString());
+            Restart();
         }
 
-        private void dgvSupl_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        private void btnDelete_Click(object sender, System.EventArgs e)
         {
-            zakaz = open.Open();
-            
+            int a= dgvSupl.CurrentRow.Index;
+            int id=(int)(dgvSupl.Rows[a].Cells["NumZak"].Value);
+            string sqlInfo = string.Format("Delete from Info where NumZak = '{0}'", id);
+            string sqlZakaz = string.Format("Delete from Zakaz where NumZak = '{0}'", id);
+            inf.Delite(sqlInfo, id);
+            inf.Delite(sqlZakaz, id);
+            Restart();
+        }
+
+        private void txtbxSearch_TextChanged(object sender, System.EventArgs e)
+        {
+            Restart();
+        }
+
+        private void Restart()
+        {
+            string search = txtbxSearch.Text;
+            string CexPer = Cex();
+            info.Clear();
+            info = inf.Open("Info", search, CexPer);
+            dgvSupl.DataSource = info;
+        }
+
+        private string Cex()
+        {
+            string CexPer = " ";
+            if (cbCex1.Checked)
+                CexPer += cbCex1.Text+" ";
+            if (cbCex2.Checked)
+                CexPer += cbCex2.Text + " ";
+            if (cbCex3.Checked)
+                CexPer += cbCex3.Text + " ";
+
+            return CexPer;
+        }
+
+        private void btnAddNSup_Click(object sender, EventArgs e)
+        {
+            NewSupplier supplier = new NewSupplier();
+
+            supplier.ShowDialog();
+            Restart();
+        }
+
+        private void dgvSupl_DoubleClick(object sender, EventArgs e)
+        {
+            int id = dgvSupl.CurrentRow.Index;
+            InfoAboutOrder order;
+            if (ParamVhod)
+            {
+                order = new InfoAboutOrder(info, id);
+            }
+            else
+            {
+                order = new InfoAboutOrder(info, id, ParamVhod);
+            }
+            order.ShowDialog();
+            Restart();
+        }
+
+
+        private void cbCex1_CheckedChanged(object sender, EventArgs e)
+        {
+            Restart();
+        }
+
+        private void tsmiExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
