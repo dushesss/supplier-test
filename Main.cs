@@ -46,8 +46,8 @@ namespace Supplier
         private void btnAddApp_Click(object sender, System.EventArgs e)
         {
             NewOrder order = new NewOrder();
-            order.ShowDialog();
             order.EmStore(log, pas);
+            order.ShowDialog();
             Restart();
         }
 

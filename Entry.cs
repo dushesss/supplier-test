@@ -39,13 +39,12 @@ namespace Supplier
                 
                 this.Visible = false;
                 Main m = new Main(log);
+                m.EmStore(txtbxLogin.Text, txtbxPass.Text);
                 m.ShowDialog();
                 this.Visible = true;
                 this.Visible = true;
                 log = false;
                 pas = false;
-                NewOrder n = new NewOrder();
-                m.EmStore(txtbxLogin.Text, txtbxPass.Text);
             }
             else
             {

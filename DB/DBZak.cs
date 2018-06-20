@@ -19,7 +19,7 @@ namespace Supplier
             return new ObjZak(ID,NameTov,NumZak,Kvo,Ed, Text);
         }
 
-        public void AddDB(string sql, string NameTov, string NumZak,int Kvo, string Ed, string Text)
+        public void AddDB(string sql, string NameTov, string NumZak,float Kvo, string Ed, string Text)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString))
             {
@@ -36,7 +36,7 @@ namespace Supplier
         }
 
         protected void zap(string sql, SqlConnection con, string NameTov,
-            string NumZak, int Kvo, string Ed, string Text)
+            string NumZak, float Kvo, string Ed, string Text)
         {
             using (SqlCommand command = new SqlCommand(sql, con))
             {

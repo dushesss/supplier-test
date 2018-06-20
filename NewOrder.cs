@@ -39,7 +39,7 @@ namespace Supplier
             catch
             {
                 MessageBox.Show("Ошибка данных");
-            } 
+            }
         }
 
         private void AddSql()
@@ -85,23 +85,31 @@ namespace Supplier
         }
         public void SendEmail()
         {
-            //string sm, port;
-            //if (l.Contains("gmail")) {sm= }
-            SmtpClient Smtp = new SmtpClient("smtp.gmail.com", 465);
-            Smtp.Credentials = new NetworkCredential(l, p);
-            MailMessage Message = new MailMessage();
-            Message.From = new MailAddress(l);
-            Message.To.Add(new MailAddress(cmbxSupl.SelectedValue.ToString()));
-            Message.Subject = "Заказ";
-            Message.Body = txtbxEmailText.Text + "\n" + txtbxStuff.Text + ": " +txtbxAmount.Text + " " +txtbxEdIzm.Text;
-            Smtp.EnableSsl = true;
+            // отправитель - устанавливаем адрес и отображаемое в письме имя
+            MailAddress from = new MailAddress(l);
+            // кому отправляем
+            MailAddress to = new MailAddress(txtbxEmailSup.Text);
+            // создаем объект сообщения
+            MailMessage m = new MailMessage(from, to);
+            // тема письма
+            m.Subject = "Заказ";
+            // текст письма
+            m.Body = txtbxEmailText.Text;
+            // письмо представляет код html
+            // m.IsBodyHtml = true;
+            // адрес smtp-сервера и порт, с которого будем отправлять письмо
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            // логин и пароль
+            smtp.Credentials = new NetworkCredential(l, p);
+            smtp.EnableSsl = true;
             try
             {
-                Smtp.Send(Message);
+                smtp.Send(m);
+                MessageBox.Show("Сообщение успешно отправлено", "Успех");
             }
             catch (SmtpException)
             {
-                MessageBox.Show("Ошибка!");
+                MessageBox.Show("Произошла ошибка отправки, проверьте правильность введенного логина и пароля", "Ошибка!");
             }
         }
         private void cmbxSupl_SelectedIndexChanged(object sender, EventArgs e)
