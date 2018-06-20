@@ -16,6 +16,7 @@ namespace Supplier
         int id, ID;
         int idZ;
 
+
         public InfoAboutOrder()
         {
             InitializeComponent();
@@ -121,10 +122,15 @@ namespace Supplier
             float Price = (float)Convert.ToDouble(tbPrice.Text);
             float OplCen = (float)Convert.ToDouble(txtbxPer.Text);
 
-            string sql = $"Update Info Set NamePost = '{NamePost}', NumZak='{NumZak}', State='{State}', date='{date}', Cex= '{Cex}', Price='{Price}', OplCen='{OplCen}'" +
+            string sql = $"Update Info Set NamePost = '{NamePost}', NumZak='{NumZak}', State='{State}', Date='{date}', Cex= '{Cex}', Price='{Price}', OplCen='{OplCen}'" +
                 $"  Where ID = '{ID}'";
 
             inf.AddDB(sql, NamePost, NumZak, State, date, Cex, Price, OplCen);
+        }
+
+        private void txtbxAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
 
         private void addZak()
@@ -135,10 +141,10 @@ namespace Supplier
             {
                 NumZak = tbNumZak.Text;
             }
-            int Kvo = 0;
+            float Kvo = 0;
             if (txtbxAmount.Text != "" && txtbxAmount.Text != null)
             {
-                Kvo = Convert.ToInt32(txtbxAmount.Text);
+                Kvo = Convert.ToSingle(txtbxAmount.Text);
             }
             string Ed = txtbxEdIzm.Text;
             string Text = txtbxTextEm.Text;

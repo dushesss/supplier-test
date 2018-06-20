@@ -91,6 +91,7 @@
             this.txtbxAmount.ReadOnly = true;
             this.txtbxAmount.Size = new System.Drawing.Size(71, 20);
             this.txtbxAmount.TabIndex = 37;
+            this.txtbxAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxAmount_KeyPress);
             // 
             // txtbxOrder
             // 

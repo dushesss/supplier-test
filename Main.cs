@@ -9,7 +9,7 @@ namespace Supplier
         DBInf inf = new DBInf();
         BindingList<ObjInf> info;
         bool ParamVhod = false;
-
+        string log, pas;
         public Main()
         {
             InitializeComponent();
@@ -33,16 +33,21 @@ namespace Supplier
             dgvSupl.Columns["NamePost"].HeaderText = "Поставщик";
             dgvSupl.Columns["NumZak"].HeaderText = "№ заказа";
             dgvSupl.Columns["State"].HeaderText = "Статус";
-            dgvSupl.Columns["date"].HeaderText = "Дата";
+            dgvSupl.Columns["Date"].HeaderText = "Дата";
             dgvSupl.Columns["Cex"].HeaderText = "Цех";
             dgvSupl.Columns["Price"].HeaderText = "Цена";
             dgvSupl.Columns["OplCen"].HeaderText = "Оплачено";
         }
-
+        public void EmStore(string l, string p)
+        {
+            log = l;
+            pas = p;
+        }
         private void btnAddApp_Click(object sender, System.EventArgs e)
         {
             NewOrder order = new NewOrder();
             order.ShowDialog();
+            order.EmStore(log, pas);
             Restart();
         }
 

@@ -216,7 +216,7 @@
             // 
             // objInfBindingSource
             // 
-            this.objInfBindingSource.DataSource = typeof(Supplier.ObjInf);
+//            this.objInfBindingSource.DataSource = typeof(Supplier.ObjInf);
             // 
             // Main
             // 
