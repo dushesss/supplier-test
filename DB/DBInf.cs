@@ -80,7 +80,7 @@ namespace Supplier
                 command.Parameters.AddWithValue("@NamePost", NamePost);
                 command.Parameters.AddWithValue("@NumZak", NumZak);
                 command.Parameters.AddWithValue("@State", State);
-                command.Parameters.AddWithValue("@date", date);
+                command.Parameters.AddWithValue("@date", date.Date);
                 command.Parameters.AddWithValue("@Cex", Cex);
                 command.Parameters.AddWithValue("@Price", Price);
                 command.Parameters.AddWithValue("@OplCen", OplCen);
